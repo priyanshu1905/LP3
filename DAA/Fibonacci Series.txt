@@ -1,0 +1,66 @@
+//Fibonacci number using recursion
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int fib(int n){
+	if(n==0){
+		return 0;
+	}
+	
+	if(n==1){
+		return 1;
+	}
+	
+	int smalloutput1 = fib(n-1);
+	int smalloutput2 = fib(n-2);
+	return smalloutput1 + smalloutput2;
+}
+
+int main(){
+	int n, i=0;
+	cout<<"\nEnter Number : ";
+	cin>>n;
+	cout<<"\nFibonacci Series : ";
+	
+	while(i<n){
+		cout<<" "<<fib(i);
+		i++;
+	}
+	
+	return 0;		
+}
+
+
+//Fibonacci number using iteration
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+	int n;
+	cout<<"\nEnter Number : ";
+	cin>>n;
+	
+	cout<<"\nFibonacci : ";
+	int t1=0, t2=1, t=0;
+	for(int i=1; i<=n; i++){
+		
+		if(i==1){
+			cout<<t1<<" ";
+			continue;
+		}
+		
+		if(i==2){
+			cout<<t2<<" ";
+			continue;
+		}
+		
+		t=t1+t2;
+		t1=t2;
+		t2=t;
+		
+		cout<<t<<" ";
+	}
+	return 0;
+}
